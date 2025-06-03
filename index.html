@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Pawani Sharma | Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+<style>
+  /* Reset */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+  html, body {
+    height: 100%;
+    font-family: 'Open Sans', sans-serif;
+    overflow-x: hidden;
+  }
+  body {
+    background: #0f2027;
+    color: #e0e6f2;
+    line-height: 1.6;
+    min-height: 100vh;
+    position: relative;
+    z-index: 0;
+  }
+
+  /* Tech animated background using CSS & SVG */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image:
+      linear-gradient(0deg, rgba(255 193 7 / 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255 193 7 / 0.1) 1px, transparent 1px);
+    background-size: 40px 40px;
+    animation: moveGrid 60s linear infinite;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  @keyframes moveGrid {
+    0% {
+      background-position: 0 0, 0 0;
+    }
+    100% {
+      background-position: 40px 40px, 40px 40px;
+    }
+  }
+
+  header {
+    background: rgba(255 255 255 / 0.1);
+    padding: 60px 20px 40px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    border-radius: 0 0 30px 30px;
+    position: relative;
+    z-index: 1;
+  }
+  header h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    color: #ffc107; /* bright amber */
+    margin-bottom: 8px;
+    text-shadow: 0 2px 6px rgba(255, 193, 7, 0.7);
+  }
+  header p {
+    font-size: 1.25rem;
+    color: #ffecb3;
+    font-weight: 400;
+    text-shadow: 0 1px 4px rgba(255, 236, 179, 0.7);
+  }
+  nav {
+    background: rgba(255 255 255 / 0.12);
+    padding: 14px 20px;
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.5);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-radius: 0 0 20px 20px;
+  }
+  nav a {
+    color: #ffd54f;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 8px 14px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0 0 8px #ffd54f66;
+  }
+  nav a:hover,
+  nav a:focus,
+  nav a.active {
+    background-color: #ffd54f;
+    color: #2c3e50;
+    outline: none;
+    box-shadow: 0 0 15px #ffc107cc;
+  }
+  main {
+    max-width: 900px;
+    margin: 40px auto 80px;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+  }
+  section {
+    margin-bottom: 60px;
+  }
+  h2 {
+    font-size: 2.4rem;
+    font-weight: 600;
+    margin-bottom: 28px;
+    color: #ffc107;
+    border-bottom: 3px solid #ffca28;
+    padding-bottom: 8px;
+    text-shadow: 0 0 8px #ffca28aa;
+  }
+  p {
+    font-size: 1.15rem;
+    color: #ffe082;
+    max-width: 850px;
+  }
+  .projects-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+    gap: 24px;
+  }
+  .project-card {
+    background: rgba(255 255 255 / 0.1);
+    border-radius: 16px;
+    padding: 24px 28px;
+    box-shadow: 0 8px 20px rgba(255 193 7 / 0.3);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: default;
+  }
+  .project-card:hover,
+  .project-card:focus-within {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 28px rgba(255 193 7 / 0.6);
+  }
+  .project-card h3 {
+    margin-bottom: 14px;
+    font-size: 1.6rem;
+    color: #fff9c4;
+  }
+  .project-card p {
+    color: #fffde7;
+    margin-bottom: 18px;
+  }
+  .project-card a {
+    color: #ffd740;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 1.1rem;
+    box-shadow: 0 0 8px #ffd740aa;
+    padding: 6px 14px;
+    border-radius: 8px;
+    display: inline-block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  .project-card a:hover,
+  .project-card a:focus {
+    background-color: #ffc107;
+    color: #2c3e50;
+    outline: none;
+    box-shadow: 0 0 15px #ffb300cc;
+  }
+  footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255 255 255 / 0.12);
+    color: #ffecb3;
+    box-shadow: 0 -2px 12px rgba(0,0,0,0.5);
+    border-radius: 20px 20px 0 0;
+    font-size: 0.9rem;
+    position: relative;
+    z-index: 1;
+  }
+  @media (max-width: 600px) {
+    header h1 {
+      font-size: 2.2rem;
+    }
+    nav {
+      flex-direction: column;
+      gap: 16px;
+    }
+    main {
+      margin: 30px auto 60px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Pawani Sharma</h1>
+  <p>Web Developer | Problem Solver | B.Tech Computer Engineering</p>
+</header>
+
+<nav aria-label="Primary navigation">
+  <a href="#about" class="active">About</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<main>
+  <section id="about" tabindex="-1">
+    <h2>About Me</h2>
+    <p>
+      I am currently pursuing B.Tech in Computer Engineering from Bharti Vidyapeeth, Pune. I'm passionate about building web apps that solve real-world problems and make life easier. I’m a quick learner and always eager to improve my coding skills and logic-building ability.
+    </p>
+  </section>
+
+  <section id="projects" tabindex="-1">
+    <h2>Projects</h2>
+    <div class="projects-list">
+      <article class="project-card" tabindex="0">
+        <h3>Tech Quiz</h3>
+        <p>A modern, interactive web-based technology quiz to test and enhance your tech knowledge using JavaScript.</p>
+        <a href="https://pawanisharma12.github.io/tech-quiz/" target="_blank" rel="noopener noreferrer">🔗 View Project</a>
+      </article>
+
+      <article class="project-card" tabindex="0">
+        <h3>Medicine Tracker</h3>
+        <p>A user-friendly web application to track and manage daily medicine schedules built with HTML, CSS, and JavaScript.</p>
+        <a href="https://pawanisharma12.github.io/Medicine-Tracker/" target="_blank" rel="noopener noreferrer">🔗 View Project</a>
+      </article>
+    </div>
+  </section>
+
+  <section id="contact" tabindex="-1">
+    <h2>Contact</h2>
+    <p><strong>Email:</strong> <a href="mailto:pawanis844@gmail.com" style="color:#ffd740;">pawanis844@gmail.com</a></p>
+    <p><strong>GitHub:</strong> <a href="https://github.com/Pawanisharma12" target="_blank" rel="noopener noreferrer" style="color:#ffd740;">github.com/Pawanisharma12</a></p>
+    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/pawani-sharma-2a2b8aa28" target="_blank" rel="noopener noreferrer" style="color:#ffd740;">View LinkedIn</a></p>
+  </section>
+</main>
+
+<footer>
+  &copy; 2025 Pawani Sharma | All Rights Reserved
+</footer>
+
+</body>
+</html>
